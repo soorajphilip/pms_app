@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PMS APP
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{:src => "https://cdn.jsdelivr.net/jquery/latest/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "https://cdn.jsdelivr.net/momentjs/latest/moment.min.js", :type => "text/javascript"}
+    %script{:src => "https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js", :type => "text/javascript"}
+    %link{:href => "https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    = render 'shared/navbar'
+    .container-fluid
+      .row
+        = render 'shared/sidebar'
+        = yield

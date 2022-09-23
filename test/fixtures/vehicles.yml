@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_entry: 2022-09-23 14:30:27
+  registration_nnumber: MyString
+
+two:
+  first_entry: 2022-09-23 14:30:27
+  registration_nnumber: MyString

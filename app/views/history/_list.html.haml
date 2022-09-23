@@ -1,0 +1,18 @@
+- if parking_history.present?
+  .table-responsive
+    %table.table.table-striped.table-sm.table-hover.table-bordered
+      %thead
+        %tr
+          %th{:scope => "col"} #
+          %th{:scope => "col"} Slot Number
+          %th{:scope => "col"} Section
+          %th{:scope => "col"} Vehicle Registration Number
+      %tbody
+        - parking_history.each.with_index(1) do |ph, i|
+          %tr
+            %td= i
+            %td= ph.slot
+            %td= ph.section
+            %td= ph.registration_number
+- else
+  %h6 No Data Available

@@ -1,0 +1,19 @@
+%main.col-md-9.ms-sm-auto.col-lg-10.px-md-4
+  .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    %h1.h2 Vehicles
+  - if @vehicles.present?
+    .table-responsive
+      %table.table.table-striped.table-sm.table-hover.table-bordered
+        %thead
+          %tr
+            %th{:scope => "col"} #
+            %th{:scope => "col"} Vehicle Registration Number
+            %th{:scope => "col"} First Entry
+        %tbody
+          - @vehicles.each.with_index(1) do |vehicle, i|
+            %tr
+              %td= i
+              %td= vehicle.registration_number
+              %td= vehicle.created_at.strftime("%I:%M %p | %a, %d-%m-%Y")
+  - else
+    %h6 No Data Available

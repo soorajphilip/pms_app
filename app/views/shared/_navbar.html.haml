@@ -1,0 +1,7 @@
+%header.navbar.navbar-dark.sticky-top.bg-dark.flex-md-nowrap.p-0.shadow.h
+  %a.navbar-brand.col-md-3.col-lg-2.me-0.px-3.fs-6{:href => root_path} PMS APP
+  %button.navbar-toggler.position-absolute.d-md-none.collapsed{"aria-controls" => "sidebarMenu", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#sidebarMenu", "data-bs-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  .navbar-nav
+    .nav-item.text-nowrap
+      %a.nav-link.px-3= Date.today.strftime("%a, %d-%m-%Y")

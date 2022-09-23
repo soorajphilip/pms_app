@@ -1,0 +1,18 @@
+%main.col-md-9.ms-sm-auto.col-lg-10.px-md-4
+  .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    %h1.h2 Bookings
+  .card.w-50.mb-5
+    .card-body
+      - unless @slots_left == 0
+        = form_with model: Booking.new, id: 'booking', local: false do |f|
+          .form-group.mb-3
+            %label.form-label Entrance
+            = f.select(:section, options_for_select([['Entrance 1',1],['Entrance 2',2],['Entrance 3',3],['Entrance 4',4]]), {include_blank: 'Select'}, {class: 'form-control', required: true} )
+          .form-group.mb-3
+            %label.form-label Registration Number
+            = f.text_field :registration_number, class: 'form-control', required: true
+          = f.submit 'Save', class: 'btn btn-primary'
+      - else
+        %h5.text-center The slots are full
+
+  #booking_response

@@ -1,0 +1,22 @@
+%main.col-md-9.ms-sm-auto.col-lg-10.px-md-4
+  .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    %h1.h2 Search
+  .d-flex.align-items-center.mb-5
+    %input.form-control.w-25.me-3#reg_number{"aria-label" => "Search", :placeholder => "Vehicle Registration Number", :type => "text"}/
+    %button.btn.btn-primary#search_button Search
+
+  #search_table
+
+:javascript
+  $(document).ready(function(){
+    $("#search_button").on('click', function(){
+      var reg_number = $("#reg_number").val();
+      if( reg_number != ''){
+        $.ajax({
+          type: 'GET',
+          url: '/search/search_query',
+          data: {reg_number: reg_number}
+        })
+      }
+    })
+  })

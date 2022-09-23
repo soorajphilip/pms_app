@@ -1,0 +1,2 @@
+class ParkingHistory < ApplicationRecord
+end
